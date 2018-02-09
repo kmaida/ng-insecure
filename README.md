@@ -1,27 +1,47 @@
-# NgInsecure
+# ng-insecure
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
+This Angular application is authenticated, but calls an unsecured API, the endpoint to which is visible in the code bundle on initial page load.
 
-## Development server
+> Data in the unsecured API is falsified for demo purposes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This repo demonstrates why you should _never_ rely solely on front-end authentication to secure sensitive data.
 
-## Code scaffolding
+## Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [Node.js](https://nodejs.org)
+* A package manager: suggest [npm](https://npmjs.com) (which comes with Node) or [Yarn](https://yarnpkg.com)
+* [Angular CLI](https://github.com/angular/angular-cli)
 
-## Build
+## Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Clone the repo:
 
-## Running unit tests
+```bash
+$ git clone https://github.com/kmaida/ng-insecure.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install dependencies:
 
-## Running end-to-end tests
+```bash
+$ cd ng-insecure
+$ npm install
+# or yarn install
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Serve
 
-## Further help
+To start the local development server:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+$ ng serve
+```
+
+To start the webserver which runs the code from the `/dist` folder:
+
+```bash
+$ node server
+```
+
+## License
+
+[MIT](LICENSE) © Kim Maida 2018
