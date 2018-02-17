@@ -1,0 +1,22 @@
+<app-auth></app-auth>
+<ng-template [ngIf]="auth.loggedIn">
+  <h1 class="text-center">Customers</h1>
+  <div class="container" *ngIf="customers$ | async; let customers">
+    <div *ngFor="let cc of customers">
+
+      <div class="card" [ngClass]="cc.type">
+        <img class="logo" [src]="getCardLogo(cc.type)">
+        <span class="name">{{ cc.name }}</span>
+        <span class="number">{{ cc.number }}</span>
+        <div class="exp">
+          <span class="validthru">Valid Thru</span>
+          <span class="exp-date">{{ cc.exp }}</span>
+        </div>
+        <div class="ccv">
+          {{ cc.cvv }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-template>
