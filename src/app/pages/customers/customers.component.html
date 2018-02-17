@@ -2,20 +2,25 @@
 <ng-template [ngIf]="auth.loggedIn">
   <h1 class="text-center">Customers</h1>
   <div class="container" *ngIf="customers$ | async; let customers">
-    <div *ngFor="let cc of customers">
+    <div class="cards-list" *ngFor="let cc of customers">
 
       <div class="card" [ngClass]="cc.type">
-        <img class="logo" [src]="getCardLogo(cc.type)">
-        <span class="name">{{ cc.name }}</span>
-        <span class="number">{{ cc.number }}</span>
-        <div class="exp">
-          <span class="validthru">Valid Thru</span>
-          <span class="exp-date">{{ cc.exp }}</span>
+        <div class="text-right">
+          <img class="logo" [src]="getCardLogo(cc.type)">
         </div>
-        <div class="ccv">
-          {{ cc.cvv }}
+        <div class="number text-center">
+          {{ cc.number | ccformat:cc.type }}
+        </div>
+        <div class="name-exp clearfix">
+          <span class="name float-left">{{ cc.name }}</span>
+          <div class="exp float-right">
+            <span class="validthru">Valid Thru</span>
+            <span class="exp-date">{{ cc.exp }}</span>
+          </div>
         </div>
       </div>
+
+      <div class="ccv text-right">{{ cc.cvv }}</div>
 
     </div>
   </div>

@@ -12,6 +12,7 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { LoadingComponent } from './loading.component';
 import { AuthComponent } from './auth/auth.component';
+import { CcformatPipe } from './ccformat.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AuthComponent } from './auth/auth.component';
     CustomersComponent,
     CallbackComponent,
     LoadingComponent,
-    AuthComponent
+    AuthComponent,
+    CcformatPipe
   ],
   imports: [
     BrowserModule,

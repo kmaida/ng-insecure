@@ -1,16 +1,43 @@
+.cards-list {
+  margin: 0 auto 2rem;
+  width: 350px;
+}
 .card {
   background: blue;
   border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.3);
   box-sizing: border-box;
   color: #fff;
-  font-family: Consolas, Courier, 'Courier New', monospace;
+  font-family: Courier, 'Courier New', monospace;
   font-size: 18px;
   height: 200px;
-  margin: 1rem;
+  margin: 2rem 0 .8rem;
   padding: 20px;
-  text-shadow: 0 1px 0 rgba(0,0,0,.8);
+  text-shadow: 1px 1px 0 #000;
   text-transform: uppercase;
   width: 350px;
+}
+.card.amex {
+  background: #c6c6c6; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #c6c6c6 1%, #b2b2b2 33%, #cecece 50%, #cccccc 61%, #eaeaea 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #c6c6c6 1%,#b2b2b2 33%,#cecece 50%,#cccccc 61%,#eaeaea 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #c6c6c6 1%,#b2b2b2 33%,#cecece 50%,#cccccc 61%,#eaeaea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.card.visa {
+  background: #b7deed; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #b7deed 0%, #71ceef 30%, #23b5ea 49%, #23b5ea 59%, #b7deed 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #b7deed 0%,#71ceef 30%,#23b5ea 49%,#23b5ea 59%,#b7deed 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #b7deed 0%,#71ceef 30%,#23b5ea 49%,#23b5ea 59%,#b7deed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  text-shadow: 0 1px 0 rgba(0,0,0,.8);
+}
+.card.mastercard {
+  background: #848484; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #848484 0%, #0d0d0d 19%, #474747 52%, #0a0a0a 83%, #1b1b1b 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #848484 0%,#0d0d0d 19%,#474747 52%,#0a0a0a 83%,#1b1b1b 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #848484 0%,#0d0d0d 19%,#474747 52%,#0a0a0a 83%,#1b1b1b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.amex .validthru {
+  color: #000;
 }
 span {
   display: inline-block;
@@ -19,22 +46,27 @@ span {
   width: 50px;
 }
 .number {
-  font-size: 20px;
+  font-size: 25px;
+  letter-spacing: 1px;
+  margin: 30px 0 25px;
+}
+.name {
+  letter-spacing: 1px;
 }
 .validthru {
   font-family: arial;
   font-size: 6px;
   line-height: 7px;
-  opacity: .85;
   text-shadow: none;
   width: 18px;
 }
 .ccv {
   background: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,.4);
   color: #000;
-  display: inline-block;
+  font-family: Courier, 'Courier New', monospace;
   font-size: 14px;
   padding: 4px 6px;
   text-shadow: none;
-  width: 38px;
+  width: 350px;
 }
