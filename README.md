@@ -30,17 +30,30 @@ $ npm install
 
 ## Serve
 
+### Development
+
 To start the local development server:
 
 ```bash
 $ ng serve
 ```
 
-To start the webserver which runs the code from the `/dist` folder:
+The app will then run at [http://localhost:4200](http://localhost:4200).
+
+### Staging
+
+To build the app and start the webserver which runs the code from the `/dist` folder:
 
 ```bash
+$ ng build --env=staging
 $ node server
 ```
+
+The app will then run at [http://localhost:1339](http://localhost:1339).
+
+### Production
+
+This demo app is live at [https://nginsecure.kmaida.net](https://nginsecure.kmaida.net).
 
 ## License
 
