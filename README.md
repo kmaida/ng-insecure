@@ -51,6 +51,8 @@ $ node server
 
 The app will then run at [http://localhost:1339](http://localhost:1339).
 
+> *NOTE:* You must comment out the `app.use(reqSec);` line in the `server.js` file in order to run the app without HTTPS.
+
 ### Production
 
 This demo app is live at [https://nginsecure.kmaida.net](https://nginsecure.kmaida.net).

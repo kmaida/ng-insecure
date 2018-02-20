@@ -24,6 +24,7 @@ function reqSec(req, res, next) {
   // Send the request on with security headers
   return next();
 }
+// IMPORTANT: Comment out the following line to run without HTTPS (i.e., locally)
 app.use(reqSec);
 
 // Run the app with static files from the /dist directory
