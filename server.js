@@ -20,7 +20,7 @@ function reqSec(req, res, next) {
   // Content Security Policy
   // Helpful in preventing XSS to ensure scripts only come
   // from approved origins
-  res.setHeader('Content-Security-Policy', 'script-src "self"');
+  res.setHeader("Content-Security-Policy", "script-src 'self'");
   // Send the request on with security headers
   return next();
 }
