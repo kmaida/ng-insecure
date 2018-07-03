@@ -5,7 +5,7 @@
         class="nav-link"
         routerLink="/"
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">Home</a>
+        [routerLinkActiveOptions]="{ exact: true }">Home</a>
     </li>
     <li *ngIf="auth.loggedIn" class="nav-item">
       <a
@@ -21,7 +21,7 @@
       (click)="auth.login()">Log In</button>
     <span *ngIf="auth.loggedIn">
       <img [src]="auth.userProfile.picture">
-      <small>{{ auth.userProfile.name }}</small>
+      <small class="px-1">{{ auth.userProfile.name }}</small>
       <button
         class="btn btn-danger btn-sm"
         (click)="auth.logout()">Log Out</button>
