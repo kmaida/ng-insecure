@@ -10,7 +10,7 @@ export class AuthService {
   private _Auth0 = new auth0.WebAuth({
     clientID: environment.auth.clientId,
     domain: environment.auth.domain,
-    responseType: 'token',
+    responseType: 'token id_token',
     redirectUri: environment.auth.redirect,
     scope: 'openid profile email'
   });
@@ -31,7 +31,7 @@ export class AuthService {
     // Check for valid Auth0 session
     this._Auth0.checkSession({}, (err, authResult) => {
       if (authResult && authResult.accessToken) {
-        this.getUserInfo(authResult);
+        this._setSession(authResult);
       } else {
         localStorage.removeItem('expires_at');
       }
@@ -53,33 +53,26 @@ export class AuthService {
     this._Auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken) {
         window.location.hash = '';
-        this.getUserInfo(authResult);
+        this._setSession(authResult);
       } else if (err) {
         console.error(`Error: ${err.error}`);
       }
     });
   }
 
-  getUserInfo(authResult) {
-    // Use access token to retrieve user's profile and set session
-    this._Auth0.client.userInfo(authResult.accessToken, (err, profile) => {
-      this._setSession(authResult, profile);
-    });
-  }
-
-  private _setSession(authResult, profile) {
+  private _setSession(authResult) {
     // Save session data and update login status subject
     this.expiresAt = authResult.expiresIn * 1000 + Date.now();
     localStorage.setItem('expires_at', JSON.stringify(this.expiresAt));
     this.accessToken = authResult.accessToken;
-    this.userProfile = profile;
+    this.userProfile = authResult.idTokenPayload;
     this._setLoggedIn(true);
     this.router.navigate(['/customers']);
   }
 
   logout() {
     this._Auth0.logout({
-      returnTo: 'http://localhost:4200',
+      returnTo: environment.auth.logoutUrl,
       clientID: environment.auth.clientId
     });
   }
