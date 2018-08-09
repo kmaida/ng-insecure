@@ -25,7 +25,6 @@ export class CustomersComponent implements OnInit {
 
     // This is completely transparent in a minified bundle.
     // We just need to search for "http.get" and there it is!
-    // this.customers$ = this.http.get('https://fakeapi.kmaida.net/api/customers');
   }
 
   getCardLogo(type: string) {
