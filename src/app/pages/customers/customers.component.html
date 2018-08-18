@@ -1,7 +1,7 @@
 <app-auth></app-auth>
 <ng-template [ngIf]="auth.loggedIn">
   <h1 class="text-center">Customers</h1>
-  <div class="container" *ngIf="customers$ | async; let customers">
+  <div class="container" *ngIf="customers">
     <div class="cards-list" *ngFor="let cc of customers">
 
       <div class="card" [ngClass]="cc.type">
